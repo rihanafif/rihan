@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil Siswa</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+@font-face{
+  font-family:'Heavitas';
+  src:url('Heavitas.ttf');
+}
+
+/* =========================
+   BACKGROUND UTAMA
+========================= */
+
+body{
+  min-height:100vh;
+
+  background:
+  linear-gradient(
+  rgba(0,0,0,0.45),
+  rgba(0,0,0,0.45)
+  ),
+  url("anime.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+
+  font-family:Arial,sans-serif;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  overflow-x:hidden;
+
+  padding:20px;
+}
+
+/* =========================
+   CARD PROFIL
+========================= */
+
+.container{
+  width:100%;
+  max-width:420px;
+
+  background:
+  linear-gradient(
+  rgba(10,10,25,0.72),
+  rgba(10,10,25,0.72)
+  ),
+  url("anime.jpg");
+
+  background-size:cover;
+  background-position:center;
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  border-radius:30px;
+
+  padding:35px 25px;
+
+  text-align:center;
+
+  box-shadow:
+  0 0 30px rgba(0,0,0,0.45);
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* glow */
+.container::before{
+  content:"";
+
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  background:rgba(255,255,255,0.04);
+
+  border-radius:50%;
+
+  top:-90px;
+  right:-90px;
+}
+
+.container::after{
+  content:"";
+
+  position:absolute;
+
+  width:160px;
+  height:160px;
+
+  background:rgba(255,255,255,0.03);
+
+  border-radius:50%;
+
+  bottom:-70px;
+  left:-70px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1{
+  color:white;
+
+  font-size:40px;
+
+  margin-bottom:10px;
+
+  position:relative;
+  z-index:2;
+}
+
+h2{
+  color:white;
+
+  margin-bottom:20px;
+
+  position:relative;
+  z-index:2;
+}
+
+/* =========================
+   FOTO PROFIL
+========================= */
+
+img{
+  width:180px;
+  height:180px;
+
+  object-fit:cover;
+
+  object-position:center 35%;
+
+  border-radius:50%;
+
+  border:5px solid white;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.5);
+
+  transition:0.4s;
+
+  margin:auto;
+
+  position:relative;
+  z-index:2;
+}
+
+img:hover{
+  transform:scale(1.06);
+}
+
+/* =========================
+   BIO
+========================= */
+
+.bio{
+  margin-top:25px;
+
+  position:relative;
+  z-index:2;
+}
+
+.bio p{
+  color:white;
+
+  font-family:'Heavitas';
+
+  font-size:16px;
+
+  margin:10px 0;
+
+  letter-spacing:1px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+a{
+  text-decoration:none;
+
+  color:white;
+
+  padding:14px 20px;
+
+  border-radius:15px;
+
+  display:inline-block;
+
+  margin:7px;
+
+  font-weight:bold;
+
+  font-size:17px;
+
+  transition:0.3s;
+
+  position:relative;
+  z-index:2;
+}
+
+a:hover{
+  transform:translateY(-4px);
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+a:active{
+  transform:scale(0.92);
+}
+
+/* =========================
+   WARNA BUTTON
+========================= */
+
+.wa{
+  background:linear-gradient(
+  45deg,
+  #00c10a,
+  #52ff00
+  );
+}
+
+.ig{
+  background:linear-gradient(
+  45deg,
+  #ff003c,
+  #c400ff,
+  #ff9f43
+  );
+}
+
+.fb{
+  background:linear-gradient(
+  45deg,
+  #1877f2,
+  #2563eb,
+  #1d4ed8
+  );
+}
+
+.tt{
+  background:linear-gradient(
+  45deg,
+  #000,
+  #111,
+  #444
+  );
+}
+
+/* =========================
+   SOSMED
+========================= */
+
+.sosmed{
+  margin-top:15px;
+
+  display:flex;
+  flex-wrap:wrap;
+
+  justify-content:center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:500px){
+
+  h1{
+    font-size:32px;
+  }
+
+  h2{
+    font-size:22px;
+  }
+
+  img{
+    width:150px;
+    height:150px;
+  }
+
+  a{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Profil Siswa</h1>
+
+  <h2>Rihan Afif</h2>
+
+  <!-- FOTO -->
+  <img src="rihan.jpg" alt="Foto Rihan">
+
+  <!-- BIO -->
+  <div class="bio">
+
+    <p>HALOO TEMAN TEMAN 👋</p>
+
+    <p>NAMAKU RIHAN 😎</p>
+
+    <p>SALAM KENAL YAAA ✨</p>
+
+  </div>
+
+  <!-- WHATSAPP -->
+  <a
+  class="wa"
+  href="https://wa.me/6283121997838"
+  target="_blank"
+  onclick="bunyi()">
+
+  Whatsapp
+
+  </a>
+
+  <!-- SOSMED -->
+  <h2 style="margin-top:30px;">
+    Sosial Media
+  </h2>
+
+  <div class="sosmed">
+
+    <a
+    class="ig"
+    href="https://www.instagram.com/hanxzz_20"
+    target="_blank"
+    onclick="bunyi()">
+
+    Instagram
+
+    </a>
+
+    <a
+    class="fb"
+    href="https://www.facebook.com/rihan.afif.7"
+    target="_blank"
+    onclick="bunyi()">
+
+    Facebook
+
+    </a>
+
+    <a
+    class="tt"
+    href="https://www.tiktok.com/@hanxzzri"
+    target="_blank"
+    onclick="bunyi()">
+
+    TikTok
+
+    </a>
+
+  </div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="sound" src="klik.mp3"></audio>
+
+<script>
+
+/* =========================
+   SUARA KLIK
+========================= */
+
+function bunyi(){
+
+  let s =
+  document.getElementById("sound");
+
+  if(s){
+
+    s.currentTime = 0;
+
+    s.play();
+
+  }
+
+}
+
+/* =========================
+   TRAIL EFFECT
+========================= */
+
+const canvas =
+document.createElement("canvas");
+
+document.body.appendChild(canvas);
+
+const ctx =
+canvas.getContext("2d");
+
+canvas.style.position = "fixed";
+canvas.style.top = "0";
+canvas.style.left = "0";
+
+canvas.style.pointerEvents = "none";
+
+canvas.style.zIndex = "9999";
+
+function resize(){
+
+  canvas.width =
+  window.innerWidth;
+
+  canvas.height =
+  window.innerHeight;
+
+}
+
+resize();
+
+window.addEventListener(
+"resize",
+resize
+);
+
+let particles = [];
+
+function createAnime(x,y){
+
+  for(let i=0;i<6;i++){
+
+    particles.push({
+
+      x:x,
+      y:y,
+
+      size:
+      Math.random()*4+2,
+
+      speedX:
+      (Math.random()-0.5)*3,
+
+      speedY:
+      (Math.random()-0.5)*3,
+
+      alpha:1,
+
+      hue:
+      Math.random()*360
+
+    });
+
+  }
+
+}
+
+function drawAnime(){
+
+  ctx.clearRect(
+  0,
+  0,
+  canvas.width,
+  canvas.height
+  );
+
+  particles.forEach((p,i)=>{
+
+    ctx.beginPath();
+
+    ctx.arc(
+    p.x,
+    p.y,
+    p.size,
+    0,
+    Math.PI*2
+    );
+
+    ctx.fillStyle =
+    `hsla(${p.hue},100%,70%,${p.alpha})`;
+
+    ctx.shadowBlur = 20;
+
+    ctx.shadowColor =
+    `hsl(${p.hue},100%,70%)`;
+
+    ctx.fill();
+
+    p.x += p.speedX;
+    p.y += p.speedY;
+
+    p.alpha -= 0.02;
+
+    if(p.alpha <= 0){
+
+      particles.splice(i,1);
+
+    }
+
+  });
+
+  requestAnimationFrame(
+  drawAnime
+  );
+
+}
+
+drawAnime();
+
+/* mouse */
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+  createAnime(
+  e.clientX,
+  e.clientY
+  );
+
+});
+
+/* touch */
+document.addEventListener(
+"touchmove",
+(e)=>{
+
+  let t =
+  e.touches[0];
+
+  createAnime(
+  t.clientX,
+  t.clientY
+  );
+
+});
+
+</script>
+
+</body>
+</html>
